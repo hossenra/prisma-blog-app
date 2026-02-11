@@ -1,0 +1,46 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+
+    // CHANGE: when using "moduleResolution": "NodeNext", set "module" to "NodeNext"
+    "module": "NodeNext",
+
+    // CHANGE: Prisma config + dotenv + process.env needs Node-style resolution
+    "moduleResolution": "NodeNext",
+
+    "target": "ES2023",
+
+    // CHANGE: include Node globals/types (process, etc.). Requires: npm i -D @types/node
+    "types": ["node"],
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    // "jsx": "react-jsx",
+    // "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  },
+
+  // CHANGE: include prisma.config.ts so TS recognizes Node env usage in that file too
+  "include": ["src/**/*", "prisma.config.ts"],
+
+  "exclude": ["node_modules", "dist", "generated/prisma"]
+}
